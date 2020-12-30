@@ -50,6 +50,7 @@ def runLDA(corpus, iterations, alpha, beta):
             for word in range(len(corpus.wordLocationArray[doc])):
                 oldTopic = corpus.topicAssignmentByLoc[doc][word]
                 corpus.removeWordFromDataStructures(word, doc, oldTopic)
+                #import pdb; pdb.set_trace()
                 wordProbabilities = corpus.calculateProbabilities(doc, word, alpha, beta)
                 newTopic = choice(range(len(wordProbabilities)), p=wordProbabilities)
                 corpus.addWordToDataStructures(word, doc, newTopic)
@@ -208,7 +209,7 @@ class CorpusData:
             docWords[:] = [w for w in docWords if w not in self.stopwords]
         for w in self.stopwords:
             self.uniqueWordDict.pop(w, None)
-
+        #import pdb; pdb.set_trace()
         # count words in each document (docWordCounts)
         docSet = list(OrderedDict.fromkeys(docColumn))
         for doc in docSet:
@@ -362,6 +363,7 @@ class CorpusData:
             pwt = (wordCount + beta) / (self.topicTotalWordCount[i] + beta)
             # ptd = P(t|d)
             wordsInTopicInDoc = self.docTopicalWordDist[docCoord][i]
+            #import pdb; pdb.set_trace()
             ptd = (wordsInTopicInDoc + alpha) / (self.docTotalWordCounts[docCoord] + alpha)
             # ptw = P(t|w)
             ptw = pwt * ptd
