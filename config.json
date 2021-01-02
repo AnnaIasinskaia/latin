@@ -1,9 +1,9 @@
 {
   "required parameters":{
-    "source": "unique.csv",
+    "source": "unified_texts.csv",
     "iterations": 100,
-    "topics": 2,
-    "output name": "unique-100iterations-10topics"
+    "topics": 10,
+    "output name": "unified_texts-100iterations-10topics"
   },
   "stopword options":{
     "upper limit": "off",
