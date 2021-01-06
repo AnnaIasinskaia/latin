@@ -1,9 +1,9 @@
 {
   "required parameters":{
     "source": "unified_texts.csv",
-    "iterations": 100,
-    "topics": 10,
-    "output name": "unified_texts-100iterations-10topics"
+    "iterations": 50,
+    "topics": 5,
+    "output name": "unified_texts-50iterations-5topics"
   },
   "stopword options":{
     "upper limit": "off",
@@ -27,7 +27,7 @@
     "using csv": "on"
   },
   "hyperparameters":{
-    "alpha": 0.8,
-    "beta": 0.8
+    "alpha": 0.5,
+    "beta": 0.5
   }
 }

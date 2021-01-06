@@ -661,7 +661,7 @@ def printProgressBar(iteration, total, prefix='', suffix='', decimals=1, length=
     if iteration == total:
         sys.stdout.write('\n')
     sys.stdout.flush()
-def main():
+def main(configFile):
     """ Uses config.json to be run straight from the shell with no
         arguments: "python3 LDA.py [name of config file].json". Calls virtually every other
         function in the file. Topics are generated according to the settings
@@ -670,10 +670,10 @@ def main():
         formatted properly.
 
     """
-    if len(sys.argv) < 2:
-        print("Usage: python3 LDA.py [config file name].json")
-        exit()
-    configFile = sys.argv[1]
+    #if len(sys.argv) < 2:
+        #print("Usage: python3 LDA.py [config file name].json")
+        #exit()
+    #configFile = sys.argv[1]
     configString = open(configFile, 'r').read()
     config = json.loads(configString)
     source = config["required parameters"]["source"]
